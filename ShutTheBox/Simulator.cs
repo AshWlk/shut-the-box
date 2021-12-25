@@ -23,8 +23,6 @@
                 complete = !boxesToShut.Any();
             }
 
-            Console.WriteLine($"Run {index}: final open boxes: {string.Join(", ", boxes.Where(box => !box.IsShut).Select(box => box.Value))}");
-
             var result = boxes.All(box => box.IsShut);
 
             return result;

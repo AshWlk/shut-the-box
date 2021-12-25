@@ -9,8 +9,9 @@ var boxes = Enumerable.Range(lowerBound, upperBound)
 
 var random = new Random();
 
-var runs = Enumerable.Range(1, 10000)
-    .Select(i => Simulator.RunGame(boxes, random, i, Sorter.ExtremesFirst(upperBound, lowerBound)))
+var runs = Enumerable.Range(1, 1000000)
+    .AsParallel()
+    .Select(i => Simulator.RunGame(boxes, random, i, Sorter.MinimumFlipsFirst))
     .ToList();
 
 var successRatio = (float)runs.Where(r => r).Count() / (float)runs.Count;

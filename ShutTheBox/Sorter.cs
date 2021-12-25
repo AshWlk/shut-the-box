@@ -7,7 +7,7 @@
             {
                 var arithmeticMean = (upperBound + lowerBound) / 2.0;
 
-                var (firstExtreme, secondExtreme) = CalculateExtremes(firstOperand, secondOperand, arithmeticMean);
+                var (firstExtreme, secondExtreme) = CalculateNormalizedExtremes(firstOperand, secondOperand, arithmeticMean);
 
                 return firstExtreme < secondExtreme ? -1 : 1;
             };
@@ -17,7 +17,7 @@
             {
                 var arithmeticMean = (upperBound + lowerBound) / 2.0;
 
-                var (firstExtreme, secondExtreme) = CalculateExtremes(firstOperand, secondOperand, arithmeticMean);
+                var (firstExtreme, secondExtreme) = CalculateNormalizedExtremes(firstOperand, secondOperand, arithmeticMean);
 
                 return firstExtreme > secondExtreme ? -1 : 1;
             };
@@ -32,7 +32,7 @@
             return firstOperand.Length < secondOperand.Length ? 1 : -1;
         }
 
-        private static (double firstExtreme, double secondExtreme) CalculateExtremes(
+        private static (double firstExtreme, double secondExtreme) CalculateNormalizedExtremes(
             int[] firstOperand, 
             int[] secondOperand, 
             double mean)
