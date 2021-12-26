@@ -9,7 +9,7 @@
 
                 var (firstExtreme, secondExtreme) = CalculateNormalizedExtremes(firstOperand, secondOperand, arithmeticMean);
 
-                return firstExtreme < secondExtreme ? -1 : 1;
+                return firstExtreme < secondExtreme ? 1 : -1;
             };
 
         internal static Comparison<int[]> ExtremesLast(int upperBound, int lowerBound) =>
@@ -19,7 +19,7 @@
 
                 var (firstExtreme, secondExtreme) = CalculateNormalizedExtremes(firstOperand, secondOperand, arithmeticMean);
 
-                return firstExtreme > secondExtreme ? -1 : 1;
+                return firstExtreme > secondExtreme ? 1 : -1;
             };
 
         internal static int MinimumFlipsFirst(int[] firstOperand, int[] secondOperand)
